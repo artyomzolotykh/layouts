@@ -1,4 +1,5 @@
 import ShopItem from "./ShopItem";
+import PropTypes from "prop-types";
 
 const ListView = ({cards}) => {
   return (
@@ -6,6 +7,14 @@ const ListView = ({cards}) => {
       {cards.map(card => <ShopItem card={card} />)}
     </div>
   );
-}
+};
+
+ListView.propTypes = {
+  cards: PropTypes.array.isRequired,
+};
+
+ListView.defaultProps = {
+  cards: [],
+};
 
 export default ListView;
